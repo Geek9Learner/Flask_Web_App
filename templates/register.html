@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NLP APP | Registration Page</title>
+    </head>
+    <body>
+        <h1>NLP App</h1>
+        <h3>Please Register Here</h3>
+        {% if message %}
+        <p style="color: red;">{{ message }}</p>
+        {% endif %}
+        <form action="/perform_registration" method="post"> <!-- When user will click on register button, perform_registration URL will activte-->
+            <label>Name</label><br>               <!--Through perform_registration we are sending data through POST method, because we can't share user credential through GET method.-->
+            <input type="text" name="User_name" required><br><br>     <!--Labeling the data through name parameter, so that receiver can understand particular data-->      
+            <label>Email</label><br>
+            <input type="email" name="User_email" required><br><br>    
+            <label>Password</label><br>
+            <input type="password" name="user_password" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+        <p> Already a User? <a href="/">Login</a></p>
+        
+    </body>
+</html>
